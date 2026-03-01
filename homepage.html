@@ -70,7 +70,7 @@
   <div class="header-inner">
     <!-- Desktop nav -->
     <nav class="header-nav">
-      <a href="shop.html" class="active">Shop</a>
+      <a href="shop.html">Shop</a>
       <a href="#">About</a>
       <a href="#">Contact</a>
     </nav>
@@ -130,8 +130,8 @@
   <!-- BRAND STRIP -->
   <div class="brand-strip">
     <div class="brand-strip-inner">
-      <span>🚚 Swiss delivery 2–3 days</span>
-      <span>↩️ 30-day free returns</span>
+      <span>🚚 Swiss delivery · CHF 9 · free over CHF 300</span>
+      <span>↩️ Free return shipping · 30 days</span>
       <span>🔒 Secure checkout</span>
       <span>🇨🇭 CHF pricing</span>
     </div>
@@ -223,8 +223,8 @@
       </div>
       <div class="mission-block" style="background:var(--bg-beige)">
         <p class="eyebrow">Our Promise</p>
-        <h2>30-day free returns, always</h2>
-        <p>Buying cashmere online requires trust. That's why we offer free 30-day returns on every order — no questions asked. If it doesn't feel right, send it back.<br><br>Swiss Post Priority delivery in 2–3 business days. CHF pricing, no hidden FX fees. Secure checkout with Stripe and Swiss payment methods.</p>
+        <h2>Free return shipping, always</h2>
+        <p>Buying cashmere online requires trust. That's why we offer free return shipping on every order — no questions asked. If it doesn't feel right, send it back.<br><br>Swiss Post Priority delivery in 2–3 business days. CHF pricing, no hidden FX fees. Secure checkout with Swiss payment methods.</p>
       </div>
     </div>
   </div>
@@ -284,8 +284,9 @@
         <span class="payment-icon">VISA</span>
         <span class="payment-icon">MC</span>
         <span class="payment-icon">AMEX</span>
-        <span class="payment-icon">🍎 Pay</span>
-        <span class="payment-icon">TWINT</span>
+        <span class="payment-icon">Apple Pay</span>
+        <span class="payment-icon">Google Pay</span>
+        <span class="payment-icon" style="opacity:0.45">TWINT <span style="font-size:0.6rem">(soon)</span></span>
       </div>
     </div>
   </div>
@@ -312,8 +313,8 @@
     <div class="cart-totals">
       <div class="row"><span>Subtotal</span><span id="cart-subtotal">CHF 0</span></div>
       <div class="row"><span>Delivery</span><span id="cart-shipping">CHF 9</span></div>
-      <div class="row" style="font-size:0.75rem; color:var(--text-light)"><span>VAT (7.7%, incl.)</span><span id="cart-vat">—</span></div>
       <div class="row total"><span>Total</span><span id="cart-total">CHF 0</span></div>
+      <p style="font-size:0.72rem; color:var(--text-light); margin-top:4px; text-align:right;">Includes <span id="cart-vat">—</span> VAT (7.7%)</p>
     </div>
     <button class="btn btn-primary btn--full btn--lg" id="cart-checkout-btn">CHECKOUT →</button>
     <button class="btn btn-secondary btn--full" style="margin-top:8px" onclick="closeCart()">Continue Shopping</button>
