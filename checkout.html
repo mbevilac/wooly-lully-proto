@@ -64,7 +64,7 @@
       </div>
       <div class="form-group">
         <label for="email">Email address</label>
-        <input type="email" id="email" class="form-input filled" value="anna@example.ch" autocomplete="email">
+        <input type="email" id="email" class="form-input" placeholder="your@email.ch" autocomplete="email">
       </div>
       <label style="display:flex; align-items:center; gap:8px; font-size:0.82rem; color:var(--text-muted); cursor:pointer;">
         <input type="checkbox" checked style="accent-color:var(--gold)">
@@ -82,11 +82,11 @@
       <div class="form-row">
         <div class="form-group">
           <label for="first-name">First name</label>
-          <input type="text" id="first-name" class="form-input filled" value="Anna" autocomplete="given-name">
+          <input type="text" id="first-name" class="form-input" placeholder="Jane" autocomplete="given-name">
         </div>
         <div class="form-group">
           <label for="last-name">Last name</label>
-          <input type="text" id="last-name" class="form-input filled" value="Müller" autocomplete="family-name">
+          <input type="text" id="last-name" class="form-input" placeholder="Smith" autocomplete="family-name">
         </div>
       </div>
       <div class="form-group">
@@ -107,9 +107,6 @@
         <label for="country">Country</label>
         <select id="country" class="form-input" style="cursor:pointer;">
           <option value="CH" selected>Switzerland 🇨🇭</option>
-          <option value="DE">Germany 🇩🇪</option>
-          <option value="AT">Austria 🇦🇹</option>
-          <option value="FR">France 🇫🇷</option>
         </select>
       </div>
 
@@ -206,6 +203,15 @@
           </div>
         </div>
 
+        <!-- Klarna (coming soon) -->
+        <div class="payment-option payment-disabled">
+          <div class="payment-option-header">
+            <input type="radio" name="payment" value="klarna" disabled>
+            <span class="payment-option-label">Klarna — Buy now, pay later</span>
+            <span class="coming-soon">Coming at MVP</span>
+          </div>
+        </div>
+
       </div><!-- /payment-options -->
 
       <!-- Pay button -->
@@ -246,8 +252,8 @@
     <div class="order-totals">
       <div class="row"><span>Subtotal</span><span id="co-subtotal">CHF 470</span></div>
       <div class="row"><span>Delivery</span><span id="co-shipping">CHF 9</span></div>
-      <div class="row" style="font-size:0.78rem; color:var(--text-light)"><span>VAT (7.7%, incl.)</span><span id="co-vat">CHF 34.13</span></div>
       <div class="row total"><span>Total</span><span id="co-total">CHF 479</span></div>
+      <p style="font-size:0.72rem; color:var(--text-light); margin-top:4px; text-align:right;">Includes <span id="co-vat">CHF 34.13</span> VAT (7.7%)</p>
     </div>
 
     <div class="order-footer">
@@ -263,10 +269,10 @@
   <div style="max-width:480px; width:100%; text-align:center;">
     <div style="font-size:3rem; margin-bottom:20px;">✅</div>
     <h1 style="font-family:var(--font-serif); font-size:1.8rem; margin-bottom:12px;">Order confirmed!</h1>
-    <p style="color:var(--text-muted); margin-bottom:8px;">Thank you, <strong>Anna</strong>. Your order has been received.</p>
+    <p style="color:var(--text-muted); margin-bottom:8px;">Your order has been received.</p>
     <p style="color:var(--text-muted); margin-bottom:32px; font-size:0.88rem;">
-      A confirmation will be sent to <strong>anna@example.ch</strong>.<br>
-      Swiss Post Priority · Estimated delivery <strong>Feb 26–28, 2026</strong>.
+      A confirmation email is on its way.<br>
+      Swiss Post Priority · Estimated delivery <strong>2–3 business days from dispatch</strong>.
     </p>
     <div style="background:var(--bg-beige); border-radius:4px; padding:24px; margin-bottom:28px; text-align:left;">
       <div style="font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted); margin-bottom:12px;">Order #WL-2026-0042</div>
