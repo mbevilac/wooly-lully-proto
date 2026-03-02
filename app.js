@@ -44,7 +44,7 @@ const PRODUCTS = {
     breadcrumb: 'Oatmeal Merino Crewneck',
     eduText: '<strong>Why merino-cashmere?</strong> The 80/20 blend gives you cashmere\'s signature softness with merino\'s natural temperature regulation and easy-care properties. Machine washable on wool cycle. The ideal everyday sweater — soft enough for bare skin, durable enough for daily wear.',
     crossLink: null,
-    accordionDesc: 'The Oatmeal Merino Crewneck is the entry point to the Wolly Lully wardrobe — and not a compromise. The 80/20 merino-cashmere blend is deliberately chosen: cashmere adds that unmistakable softness against skin, while merino provides natural temperature regulation and easy-care durability.<br><br>Machine washable on a wool cycle. The ideal everyday sweater for those who wear their knitwear hard.',
+    accordionDesc: 'The Oatmeal Merino Crewneck is the entry point to the Wooly Lully wardrobe — and not a compromise. The 80/20 merino-cashmere blend is deliberately chosen: cashmere adds that unmistakable softness against skin, while merino provides natural temperature regulation and easy-care durability.<br><br>Machine washable on a wool cycle. The ideal everyday sweater for those who wear their knitwear hard.',
     careInstructions: '🌀 Machine wash on wool/delicate cycle (30°C max)<br>🚫 Do not tumble dry — lay flat to dry<br>🧴 Merino-safe detergent<br>👕 Store folded, not hung',
   },
   'cream-scarf': {
@@ -100,7 +100,7 @@ function initPdpProductSwitch() {
   const slug = params.get('product') || 'navy-crewneck';
   const product = PRODUCTS[slug] || PRODUCTS['navy-crewneck'];
 
-  document.title = `${product.name} — Wolly Lully`;
+  document.title = `${product.name} — Wooly Lully`;
   const breadcrumbCurrent = document.querySelector('.breadcrumb .current');
   if (breadcrumbCurrent) breadcrumbCurrent.textContent = product.breadcrumb;
 
