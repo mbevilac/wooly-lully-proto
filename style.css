@@ -100,12 +100,16 @@ h4 { font-size: 1rem; }
 .header-nav a:hover, .header-nav a.active { color: var(--text); }
 
 .header-logo {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   font-family: var(--font-serif);
   font-size: 1.25rem;
   letter-spacing: 0.08em;
   color: var(--text);
 }
+.header-logo .logo-mark { flex-shrink: 0; }
 
 .header-actions {
   display: flex;
@@ -1321,10 +1325,14 @@ h4 { font-size: 1rem; }
   justify-content: space-between;
 }
 .checkout-header .logo {
+  display: flex;
+  align-items: center;
+  gap: 7px;
   font-family: var(--font-serif);
   font-size: 1.1rem;
   letter-spacing: 0.06em;
 }
+.checkout-header .logo .logo-mark { flex-shrink: 0; }
 .checkout-header .secure-label {
   display: flex;
   align-items: center;
