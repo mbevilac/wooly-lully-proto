@@ -58,7 +58,7 @@
     <nav class="header-nav">
       <a href="shop.html">Shop</a>
       <a href="about.html">About</a>
-      <a href="#">Contact</a>
+      <a href="mailto:info@woolylully.ch">Contact</a>
     </nav>
 
     <!-- Logo -->
@@ -88,13 +88,12 @@
   </div>
   <div class="nav-drawer-links">
     <a href="shop.html">Shop <span>›</span></a>
-    <a href="#">About <span>›</span></a>
-    <a href="#">Contact <span>›</span></a>
+    <a href="about.html">About <span>›</span></a>
+    <a href="mailto:info@woolylully.ch">Contact <span>›</span></a>
   </div>
   <div class="nav-drawer-footer">
-    <a href="#">Size Guide</a>
-    <a href="#">Returns &amp; Exchanges</a>
-    <a href="#">Shipping &amp; Delivery</a>
+    <a href="pdp.html">Size Guide</a>
+    <a href="pdp.html">Care Instructions</a>
   </div>
 </nav>
 
@@ -109,7 +108,7 @@
       <p class="hero-eyebrow">Premium Cashmere, Swiss Design</p>
       <h1>Extraordinary softness,<br>everyday elegance</h1>
       <p>Thoughtfully crafted cashmere for those who appreciate the finest natural fibres.<br>Delivered to your door from Switzerland.</p>
-      <a href="shop.html" class="btn btn-primary btn-lg">Collection</a>
+      <a href="shop.html" class="btn btn-primary btn--lg hero-cta">Shop the Collection</a>
     </div>
   </section>
 
@@ -236,23 +235,23 @@
       <div class="footer-col">
         <h5>Info</h5>
         <a href="about.html">About Wooly Lully</a>
-        <a href="#">Size Guide</a>
-        <a href="#">Care Instructions</a>
-        <a href="#">Contact</a>
+        <a href="pdp.html#size-guide" onclick="event.preventDefault(); window.location.href='pdp.html'; setTimeout(()=>{document.getElementById('size-guide-modal')?.classList.add('open')},500);">Size Guide</a>
+        <a href="pdp.html">Care Instructions</a>
+        <a href="mailto:info@woolylully.ch">Contact</a>
       </div>
       <div class="footer-col">
         <h5>Legal</h5>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms &amp; Conditions</a>
-        <a href="#">Shipping &amp; Delivery</a>
-        <a href="#">Return Policy</a>
-        <a href="#">Imprint</a>
+        <span class="footer-link-disabled">Privacy Policy</span>
+        <span class="footer-link-disabled">Terms &amp; Conditions</span>
+        <span class="footer-link-disabled">Shipping &amp; Delivery</span>
+        <span class="footer-link-disabled">Return Policy</span>
+        <span class="footer-link-disabled">Imprint</span>
       </div>
       <div class="footer-col">
         <h5>Contact</h5>
-        <a href="#">info@woolylully.ch</a>
-        <a href="#">Zurich, Switzerland</a>
-        <a href="#">Instagram</a>
+        <a href="mailto:info@woolylully.ch">info@woolylully.ch</a>
+        <span>Zurich, Switzerland</span>
+        <span class="footer-link-disabled">Instagram</span>
       </div>
     </div>
     <div class="footer-bottom">
@@ -291,7 +290,7 @@
       <div class="row"><span>Subtotal</span><span id="cart-subtotal">CHF 0</span></div>
       <div class="row"><span>Delivery</span><span id="cart-shipping">CHF 9</span></div>
       <div class="row total"><span>Total</span><span id="cart-total">CHF 0</span></div>
-      <p style="font-size:0.72rem; color:var(--text-light); margin-top:4px; text-align:right;">Includes <span id="cart-vat">—</span> VAT (7.7%)</p>
+      <p style="font-size:0.72rem; color:var(--text-light); margin-top:4px; text-align:right;">Includes <span id="cart-vat">—</span> VAT (8.1%)</p>
     </div>
     <button class="btn btn-primary btn--full btn--lg" id="cart-checkout-btn">CHECKOUT →</button>
     <button class="btn btn-secondary btn--full" style="margin-top:8px" onclick="closeCart()">Continue Shopping</button>

@@ -91,7 +91,7 @@ These are the 10 UX recommendations implemented in this prototype, based on anal
 - **Free shipping threshold:** CHF 300
 - **Flat shipping rate:** CHF 9 (Swiss Post Priority, 2-3 business days)
 - **Return window:** 14 days
-- **VAT rate:** 7.7% (Swiss, included in price)
+- **VAT rate:** 8.1% (Swiss standard rate from Jan 2024, included in price)
 - **Currency:** CHF only
 
 ## Authentication

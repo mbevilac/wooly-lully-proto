@@ -16,13 +16,16 @@ const PRODUCTS = {
     ],
     fits: { XS: 'Slim Fit — close-cut, tailored', S: 'Slim Fit — close-cut, tailored', M: 'Classic Fit — true to standard sizing', L: 'Classic Fit — true to standard sizing', XL: 'Relaxed Fit — falls softly, generous through the body', XXL: 'Relaxed Fit — falls softly, generous through the body' },
     sizes: ['XS','S','M','L','XL','XXL'], defaultSize: 'M',
-    colours: [{ label: 'Navy', cls: 'img-navy', active: true }, { label: 'Cream', cls: 'img-cream', border: true }],
+    colours: [
+      { label: 'Navy', cls: 'img-navy', active: true, slug: 'navy-crewneck' },
+      { label: 'Cream', cls: 'img-cream', border: true, slug: 'cream-crewneck' },
+    ],
     defaultColour: 'Navy',
     image: 'imgs/products/navy-cashmere-crewneck-front.png',
     thumbs: ['imgs/products/navy-cashmere-crewneck-front.png','imgs/lifestyle/about-lifestyle-01.png','imgs/lifestyle/about-lifestyle-02.png','imgs/lifestyle/about-lifestyle-03.png'],
     breadcrumb: 'Navy Cashmere Crewneck',
     eduText: '<strong>Why it matters:</strong> &lt;19 micron fibre is the finest grade of cashmere — softer against skin and more durable over years. 280 gsm means substantial warmth without bulk. 2-ply construction holds its shape wash after wash.',
-    crossLink: 'Also available in Cream · <a href="shop.html" style="text-decoration:underline">Browse all colourways</a>',
+    crossLink: null,
     accordionDesc: 'The Navy Cashmere Crewneck is a wardrobe essential built to last. Knitted from 100% 2-ply Grade A cashmere, it delivers an extraordinary softness that only improves with wear. The classic crewneck silhouette suits everything from smart-casual to relaxed weekend dressing.<br><br>The navy colourway is a Swiss wardrobe staple — pairs effortlessly with grey trousers, cream chinos, or dark denim. Finished with clean ribbed cuffs and hem.',
     careInstructions: '🌀 Hand wash<br>🚫 Do not tumble dry — lay flat to dry away from direct heat<br>🧴 Use a gentle cashmere or wool detergent<br>👕 Store folded, not hung — hang causes stretching over time<br>🪷 De-pill with a cashmere comb after the first few wears — normal with 2-ply',
   },
@@ -122,7 +125,7 @@ function initPdpProductSwitch() {
   const swatchContainer = document.querySelector('.colour-swatches');
   if (swatchContainer) {
     swatchContainer.innerHTML = product.colours.map(c =>
-      `<div class="swatch${c.active ? ' active' : ''} ${c.cls}" data-colour="${c.label}" title="${c.label}" style="border-radius:50%;${c.border ? 'border:1px solid var(--border)' : ''}"></div>`
+      `<div class="swatch${c.active ? ' active' : ''} ${c.cls}" data-colour="${c.label}" data-slug="${c.slug || ''}" title="${c.label}" style="border-radius:50%;${c.border ? 'border:1px solid var(--border)' : ''}"></div>`
     ).join('');
   }
   const colourLabel = document.querySelector('.selected-colour');
@@ -277,6 +280,10 @@ function renderCartDrawer() {
     if (msgEl) {
       if (remaining > 0) {
         msgEl.innerHTML = `Add <strong>CHF ${remaining.toFixed(0)}</strong> more for free delivery 🎉`;
+        // Show accessory suggestion when close to threshold
+        if (remaining <= 200 && remaining > 0) {
+          msgEl.innerHTML += `<br><a href="shop.html" onclick="closeCart()" style="font-size:0.78rem; color:var(--gold); text-decoration:underline;">Add a Scarf (CHF 180) or Beanie (CHF 185)?</a>`;
+        }
       } else {
         msgEl.innerHTML = `<strong>Free delivery unlocked!</strong> 🎉`;
       }
@@ -325,7 +332,7 @@ function renderCartDrawer() {
   if (subtotalEl) subtotalEl.textContent = `CHF ${total.toFixed(0)}`;
   if (shippingEl) shippingEl.textContent = shipping === 0 ? 'Free' : `CHF ${shipping}`;
   if (totalEl) totalEl.textContent = `CHF ${(total + shipping).toFixed(0)}`;
-  if (vatEl) vatEl.textContent = `CHF ${((total + shipping) * 0.077 / 1.077).toFixed(2)}`;
+  if (vatEl) vatEl.textContent = `CHF ${((total + shipping) * 0.081 / 1.081).toFixed(2)}`;
 
   // Count in header
   const headerEl = document.querySelector('.cart-drawer-header h3');
@@ -430,6 +437,11 @@ function initColourSwatches() {
   document.querySelectorAll('.colour-swatches').forEach(group => {
     group.querySelectorAll('.swatch').forEach(swatch => {
       swatch.addEventListener('click', () => {
+        const slug = swatch.dataset.slug;
+        if (slug && !swatch.classList.contains('active')) {
+          window.location.href = `pdp.html?product=${slug}`;
+          return;
+        }
         group.querySelectorAll('.swatch').forEach(s => s.classList.remove('active'));
         swatch.classList.add('active');
         const label = swatch.closest('.pdp-info')?.querySelector('.selected-colour');
@@ -573,7 +585,7 @@ function renderOrderSummary() {
   const subtotal = cartTotal();
   const shipping = subtotal >= FREE_SHIPPING ? 0 : SHIPPING;
   const total = subtotal + shipping;
-  const vat = total * 0.077 / 1.077;
+  const vat = total * 0.081 / 1.081;
 
   if (cart.length === 0) {
     // Demo mode: show placeholder items
@@ -601,8 +613,8 @@ function renderOrderSummary() {
         <div class="order-item-price">CHF 185</div>
       </div>
     `;
-    // Static totals for demo
-    setCheckoutTotals(470, 9, 479);
+    // Static totals for demo (470 >= 300 → free shipping)
+    setCheckoutTotals(470, 0, 470);
     return;
   }
 
@@ -628,7 +640,7 @@ function renderOrderSummary() {
 }
 
 function setCheckoutTotals(subtotal, shipping, total) {
-  const vat = total * 0.077 / 1.077;
+  const vat = total * 0.081 / 1.081;
   const el = id => document.getElementById(id);
   if (el('co-subtotal')) el('co-subtotal').textContent = `CHF ${subtotal.toFixed(0)}`;
   if (el('co-shipping')) el('co-shipping').textContent = shipping === 0 ? 'Free' : `CHF ${shipping}`;
@@ -668,6 +680,24 @@ function initShopFilters() {
     });
 
     if (countEl) countEl.textContent = `${visible} of ${allCards.length} products`;
+
+    // Empty state
+    let emptyMsg = grid.querySelector('.filter-empty-state');
+    if (visible === 0) {
+      if (!emptyMsg) {
+        emptyMsg = document.createElement('div');
+        emptyMsg.className = 'filter-empty-state';
+        emptyMsg.innerHTML = `
+          <p style="font-size:1rem; margin-bottom:8px;">No products match your filters</p>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:16px;">Try removing some filters to see more results.</p>
+          <button class="btn btn-secondary" onclick="document.getElementById('clear-filters').click()">Clear all filters</button>
+        `;
+        grid.appendChild(emptyMsg);
+      }
+      emptyMsg.style.display = 'flex';
+    } else if (emptyMsg) {
+      emptyMsg.style.display = 'none';
+    }
 
     // Active filter chips
     const chipLabels = { price: 'Price', colour: 'Colour', size: 'Size', fit: 'Fit', style: 'Style', material: 'Material' };
