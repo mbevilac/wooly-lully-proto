@@ -32,7 +32,7 @@
     Order summary · 2 items
   </span>
   <span style="display:flex; align-items:center; gap:6px;">
-    <span id="co-total-mobile" style="font-weight:500;">CHF 479</span>
+    <span id="co-total-mobile" style="font-weight:500;">CHF 470</span>
     <span class="toggle-arrow">▼</span>
   </span>
 </button>
@@ -220,7 +220,7 @@
       <!-- Pay button -->
       <div class="pay-btn-wrapper">
         <button class="btn btn-primary btn--full btn--lg" id="pay-btn" onclick="handlePayment()">
-          PAY SECURELY — CHF 479
+          PAY SECURELY — CHF 470
         </button>
       </div>
 
@@ -254,9 +254,9 @@
     <!-- Totals -->
     <div class="order-totals">
       <div class="row"><span>Subtotal</span><span id="co-subtotal">CHF 470</span></div>
-      <div class="row"><span>Delivery</span><span id="co-shipping">CHF 9</span></div>
-      <div class="row total"><span>Total</span><span id="co-total">CHF 479</span></div>
-      <p style="font-size:0.72rem; color:var(--text-light); margin-top:4px; text-align:right;">Includes <span id="co-vat">CHF 34.13</span> VAT (7.7%)</p>
+      <div class="row"><span>Delivery</span><span id="co-shipping">Free</span></div>
+      <div class="row total"><span>Total</span><span id="co-total">CHF 470</span></div>
+      <p style="font-size:0.72rem; color:var(--text-light); margin-top:4px; text-align:right;">Includes <span id="co-vat">CHF 35.21</span> VAT (8.1%)</p>
     </div>
 
     <div class="order-footer">
@@ -281,7 +281,7 @@
       <div style="font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted); margin-bottom:12px;">Order #WL-2026-0042</div>
       <div id="confirmation-items"></div>
       <div style="border-top:1px solid var(--border); padding-top:12px; margin-top:12px; display:flex; justify-content:space-between; font-weight:500;">
-        <span>Total</span><span id="confirmation-total">CHF 479</span>
+        <span>Total</span><span id="confirmation-total">CHF 470</span>
       </div>
     </div>
     <a href="homepage.html" class="btn btn-primary" style="display:inline-block;">Continue Shopping</a>
@@ -386,7 +386,8 @@
             <span>CHF ${(item.price * item.qty).toFixed(0)}</span>
           </div>
         `).join('');
-        const total = cartTotal() + (cartTotal() >= 300 ? 0 : 9);
+        const subtotal = cartTotal();
+        const total = subtotal + (subtotal >= 300 ? 0 : 9);
         if (confirmTotal) confirmTotal.textContent = `CHF ${total.toFixed(0)}`;
         saveCart([]);
         updateCartBadge();
