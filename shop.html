@@ -8,6 +8,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon.png">
+
 </head>
 <body>
 
@@ -19,7 +22,7 @@
       <a href="about.html">About</a>
       <a href="mailto:info@woolylully.ch">Contact</a>
     </nav>
-    <a href="homepage.html" class="header-logo">WOOLY LULLY</a>
+    <a href="homepage.html" class="header-logo"><img src="assets/logo/logo-full.svg" alt="Wooly Lully" height="40"></a>
     <div class="header-actions">
       <button class="cart-btn" id="open-cart" aria-label="Open cart">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
@@ -38,12 +41,12 @@
 <nav class="nav-drawer" id="nav-drawer">
   <div class="nav-drawer-header">
     <span>Menu</span>
-    <button class="icon-btn" id="nav-close">✕</button>
+    <button class="icon-btn" id="nav-close"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
   </div>
   <div class="nav-drawer-links">
-    <a href="shop.html">Shop <span>›</span></a>
-    <a href="about.html">About <span>›</span></a>
-    <a href="mailto:info@woolylully.ch">Contact <span>›</span></a>
+    <a href="shop.html">Shop <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
+    <a href="about.html">About <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
+    <a href="mailto:info@woolylully.ch">Contact <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
   </div>
   <div class="nav-drawer-footer">
     <a href="pdp.html">Size Guide</a>
@@ -57,8 +60,8 @@
   <!-- BRAND STRIP -->
   <div class="brand-strip">
     <div class="brand-strip-inner">
-      <span>🚚 Swiss delivery · CHF 9 · free over CHF 300</span>
-      <span>↩️ Return · 14 days</span>
+      <span><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg> Swiss delivery · CHF 9 · free over CHF 300</span>
+      <span><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 14 4 9 9 4"/><path d="M20 20v-7a4 4 0 00-4-4H4"/></svg> 14-day returns</span>
     </div>
   </div>
 
@@ -67,7 +70,7 @@
     <!-- Breadcrumb -->
     <nav class="breadcrumb">
       <a href="homepage.html">Home</a>
-      <span class="sep">›</span>
+      <span class="sep"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span>
       <span class="current">Shop</span>
     </nav>
 
@@ -411,12 +414,12 @@
 <div class="filter-drawer" id="filter-drawer" role="dialog" aria-label="Filter products">
   <div class="filter-drawer-header">
     <span style="font-size:0.85rem; font-weight:500;">Filter &amp; Sort</span>
-    <button class="icon-btn" id="filter-drawer-close">✕</button>
+    <button class="icon-btn" id="filter-drawer-close"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
   </div>
 
   <!-- Sort -->
   <div class="filter-accordion-item">
-    <button class="filter-accordion-btn">Sort by <span class="arrow">›</span></button>
+    <button class="filter-accordion-btn">Sort by <span class="arrow"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span></button>
     <div class="filter-accordion-content" data-filter-key="sort">
       <button class="filter-option-btn active" data-filter-key="sort" data-value="featured">Featured</button>
       <button class="filter-option-btn" data-filter-key="sort" data-value="price-asc">Price: Low → High</button>
@@ -426,7 +429,7 @@
 
   <!-- Price -->
   <div class="filter-accordion-item">
-    <button class="filter-accordion-btn">Price <span class="arrow">›</span></button>
+    <button class="filter-accordion-btn">Price <span class="arrow"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span></button>
     <div class="filter-accordion-content">
       <button class="filter-option-btn" data-filter-key="price" data-value="180-300">CHF 180–300</button>
       <button class="filter-option-btn" data-filter-key="price" data-value="300-500">CHF 300–500</button>
@@ -435,7 +438,7 @@
 
   <!-- Size -->
   <div class="filter-accordion-item">
-    <button class="filter-accordion-btn">Size <span class="arrow">›</span></button>
+    <button class="filter-accordion-btn">Size <span class="arrow"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span></button>
     <div class="filter-accordion-content">
       <button class="filter-option-btn" data-filter-key="size" data-value="XS">XS</button>
       <button class="filter-option-btn" data-filter-key="size" data-value="S">S</button>
@@ -448,7 +451,7 @@
 
   <!-- Fit -->
   <div class="filter-accordion-item">
-    <button class="filter-accordion-btn">Fit <span class="arrow">›</span></button>
+    <button class="filter-accordion-btn">Fit <span class="arrow"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span></button>
     <div class="filter-accordion-content">
       <button class="filter-option-btn" data-filter-key="fit" data-value="Classic">Classic</button>
       <button class="filter-option-btn" data-filter-key="fit" data-value="Relaxed">Relaxed</button>
@@ -458,7 +461,7 @@
 
   <!-- Style -->
   <div class="filter-accordion-item">
-    <button class="filter-accordion-btn">Style <span class="arrow">›</span></button>
+    <button class="filter-accordion-btn">Style <span class="arrow"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span></button>
     <div class="filter-accordion-content">
       <button class="filter-option-btn" data-filter-key="style" data-value="Crewneck">Crewneck</button>
       <button class="filter-option-btn" data-filter-key="style" data-value="V-Neck">V-Neck</button>
@@ -471,7 +474,7 @@
 
   <!-- Material -->
   <div class="filter-accordion-item">
-    <button class="filter-accordion-btn">Material <span class="arrow">›</span></button>
+    <button class="filter-accordion-btn">Material <span class="arrow"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span></button>
     <div class="filter-accordion-content">
       <button class="filter-option-btn" data-filter-key="material" data-value="cashmere">100% Cashmere</button>
       <button class="filter-option-btn" data-filter-key="material" data-value="merino">Merino Blend</button>
@@ -489,10 +492,10 @@
 <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-label="Shopping cart">
   <div class="cart-drawer-header">
     <h3>Your Cart</h3>
-    <button class="icon-btn" id="cart-close">✕</button>
+    <button class="icon-btn" id="cart-close"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
   </div>
   <div class="shipping-progress" id="shipping-progress">
-    <p>Add <strong>CHF 300</strong> more for free delivery 🎉</p>
+    <p>Add <strong>CHF 300</strong> more for free delivery</p>
     <div class="progress-bar"><div class="progress-bar-fill" style="width:0%"></div></div>
   </div>
   <div id="cart-items-list" class="cart-items"></div>
@@ -510,7 +513,7 @@
     </div>
     <button class="btn btn-primary btn--full btn--lg" id="cart-checkout-btn">CHECKOUT →</button>
     <button class="btn btn-secondary btn--full" style="margin-top:8px" onclick="closeCart()">Continue Shopping</button>
-    <p class="cart-trust">↩️ 14-day return &nbsp;·&nbsp; 🔒 Secure checkout</p>
+    <p class="cart-trust"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 14 4 9 9 4"/><path d="M20 20v-7a4 4 0 00-4-4H4"/></svg> 14-day return &nbsp;·&nbsp; <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg> Secure checkout</p>
   </div>
 </aside>
 

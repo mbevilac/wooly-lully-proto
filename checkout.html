@@ -8,6 +8,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon.png">
+
   <style>
     body { background: var(--bg-white); }
     .checkout-wrap { min-height: 100vh; }
@@ -17,7 +20,7 @@
 
 <!-- ===== CHECKOUT HEADER (minimal) ===== -->
 <header class="checkout-header">
-  <a href="homepage.html" class="logo">WOOLY LULLY</a>
+  <a href="homepage.html" class="logo"><img src="assets/logo/logo-full.svg" alt="Wooly Lully" height="36"></a>
   <span class="secure-label">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
     Secure Checkout
@@ -33,7 +36,7 @@
   </span>
   <span style="display:flex; align-items:center; gap:6px;">
     <span id="co-total-mobile" style="font-weight:500;">CHF 470</span>
-    <span class="toggle-arrow">▼</span>
+    <span class="toggle-arrow"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
   </span>
 </button>
 
@@ -48,7 +51,7 @@
       <p>Express checkout</p>
       <div class="express-btns">
         <button class="express-btn apple" onclick="showToast('Apple Pay — not implemented in prototype')">
-          🍎 Apple Pay
+          Apple Pay
         </button>
         <button class="express-btn google" onclick="showToast('Google Pay — not implemented in prototype')">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="#4285F4"><circle cx="12" cy="12" r="12"/></svg>
@@ -109,7 +112,7 @@
       <div class="form-group">
         <label for="country">Country</label>
         <select id="country" class="form-input" style="cursor:pointer;">
-          <option value="CH" selected>Switzerland 🇨🇭</option>
+          <option value="CH" selected>Switzerland</option>
         </select>
       </div>
 
@@ -117,14 +120,14 @@
       <div style="margin-top:16px; padding:16px; background:var(--bg-beige); border-radius:var(--radius); border:1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
         <div>
           <div style="font-size:0.88rem; font-weight:500; display:flex; align-items:center; gap:8px;">
-            <span>✅</span> Swiss Post Priority
+            <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg> Swiss Post Priority
           </div>
           <div style="font-size:0.78rem; color:var(--text-muted); margin-top:4px;">2–3 business days</div>
         </div>
         <div id="shipping-price-display" style="font-size:0.88rem; font-weight:500;">CHF 9</div>
       </div>
       <p style="font-size:0.75rem; color:var(--success); margin-top:8px; display:none;" id="free-shipping-msg">
-        🎉 Free shipping applied on orders over CHF 300!
+        Free shipping applied on orders over CHF 300
       </p>
     </div>
 
@@ -176,7 +179,7 @@
         <div class="payment-option">
           <div class="payment-option-header">
             <input type="radio" name="payment" value="apple">
-            <span class="payment-option-label">🍎 Apple Pay</span>
+            <span class="payment-option-label">Apple Pay</span>
           </div>
         </div>
 
@@ -226,7 +229,7 @@
 
       <!-- R3: Reassurance below pay button -->
       <p class="checkout-reassurance">
-        ↩️ 14-day return &nbsp;·&nbsp; 🔒 Your payment is encrypted and secure<br>
+        <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 14 4 9 9 4"/><path d="M20 20v-7a4 4 0 00-4-4H4"/></svg> 14-day return &nbsp;·&nbsp; <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg> Your payment is encrypted and secure<br>
         By placing your order you agree to our <a href="#" style="text-decoration:underline; color:inherit;">Terms &amp; Conditions</a>.
       </p>
 
@@ -260,8 +263,8 @@
     </div>
 
     <div class="order-footer">
-      🚚 Estimated delivery 2–3 business days after dispatch<br>
-      ↩️ 14-day return on all orders
+      <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg> Estimated delivery 2–3 business days after dispatch<br>
+      <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 14 4 9 9 4"/><path d="M20 20v-7a4 4 0 00-4-4H4"/></svg> 14-day return on all orders
     </div>
   </div>
 
@@ -270,7 +273,7 @@
 <!-- ===== ORDER CONFIRMATION (hidden, shown on pay) ===== -->
 <div id="confirmation-screen" style="display:none; position:fixed; inset:0; background:var(--bg-white); z-index:1000; display:none; align-items:center; justify-content:center; padding:24px;">
   <div style="max-width:480px; width:100%; text-align:center;">
-    <div style="font-size:3rem; margin-bottom:20px;">✅</div>
+    <div style="margin-bottom:20px;"><svg class="icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg></div>
     <h1 style="font-family:var(--font-serif); font-size:1.8rem; margin-bottom:12px;">Order confirmed!</h1>
     <p style="color:var(--text-muted); margin-bottom:8px;">Your order has been received.</p>
     <p style="color:var(--text-muted); margin-bottom:32px; font-size:0.88rem;">
