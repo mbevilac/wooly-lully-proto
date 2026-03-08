@@ -8,6 +8,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon.png">
+
 </head>
 <body>
 
@@ -19,7 +22,7 @@
       <a href="about.html">About</a>
       <a href="mailto:info@woolylully.ch">Contact</a>
     </nav>
-    <a href="homepage.html" class="header-logo">WOOLY LULLY</a>
+    <a href="homepage.html" class="header-logo"><img src="assets/logo/logo-full.svg" alt="Wooly Lully" height="40"></a>
     <div class="header-actions">
       <button class="cart-btn" id="open-cart" aria-label="Open cart">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
@@ -38,12 +41,12 @@
 <nav class="nav-drawer" id="nav-drawer">
   <div class="nav-drawer-header">
     <span>Menu</span>
-    <button class="icon-btn" id="nav-close">✕</button>
+    <button class="icon-btn" id="nav-close"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
   </div>
   <div class="nav-drawer-links">
-    <a href="shop.html">Shop <span>›</span></a>
-    <a href="about.html">About <span>›</span></a>
-    <a href="mailto:info@woolylully.ch">Contact <span>›</span></a>
+    <a href="shop.html">Shop <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
+    <a href="about.html">About <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
+    <a href="mailto:info@woolylully.ch">Contact <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
   </div>
   <div class="nav-drawer-footer">
     <a href="#" onclick="event.preventDefault(); document.getElementById('size-guide-modal')?.classList.add('open');">Size Guide</a>
@@ -58,9 +61,9 @@
     <!-- Breadcrumb -->
     <nav class="breadcrumb">
       <a href="homepage.html">Home</a>
-      <span class="sep">›</span>
+      <span class="sep"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span>
       <a href="shop.html">Shop</a>
-      <span class="sep">›</span>
+      <span class="sep"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span>
       <span class="current">Navy Cashmere Crewneck</span>
     </nav>
 
@@ -163,8 +166,8 @@
 
           <!-- R3: Trust bar -->
           <div class="trust-bar">
-            <span>🚚 Swiss delivery · CHF 9 · free over CHF 300</span>
-            <span>↩️ Return · 14 days</span>
+            <span><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg> Swiss delivery · CHF 9 · free over CHF 300</span>
+            <span><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 14 4 9 9 4"/><path d="M20 20v-7a4 4 0 00-4-4H4"/></svg> 14-day returns</span>
           </div>
 
           <!-- Payment icons -->
@@ -197,11 +200,11 @@
               <span class="accordion-icon">+</span>
             </button>
             <div class="accordion-content">
-              <p>🌀 Recommend hand wash, 30°C max<br>
-              🚫 Do not tumble dry — lay flat to dry away from direct heat<br>
-              🧴 Use a gentle cashmere or wool detergent<br>
-              👕 Store folded, not hung — hang causes stretching over time<br>
-              🪷 De-pill with a cashmere comb, if required.</p>
+              <p><svg class="care-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14c0 4 3.5 6 8 6s8-2 8-6"/><line x1="2" y1="14" x2="22" y2="14"/><path d="M7 11c1-1.5 2.5-1.5 3.5 0s2.5 1.5 3.5 0 2.5-1.5 3.5 0"/><path d="M10 10V5.5a1.5 1.5 0 013 0V9"/><path d="M13 8V4.5a1.5 1.5 0 013 0V9"/><path d="M10 7V3.5a1.5 1.5 0 00-3 0V10"/></svg> Hand wash cold<br>
+              <svg class="care-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="12" r="5"/><line x1="4" y1="4" x2="20" y2="20"/></svg> Do not tumble dry — lay flat to dry away from direct heat<br>
+              <svg class="care-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 8v12a2 2 0 002 2h4a2 2 0 002-2V8"/><path d="M10 8V5a1 1 0 011-1h2a1 1 0 011 1v3"/><rect x="9" y="2" width="6" height="2" rx="0.5"/><line x1="10" y1="14" x2="14" y2="14"/><line x1="10" y1="16.5" x2="14" y2="16.5"/></svg> Use a gentle cashmere or wool detergent<br>
+              Store folded, not hung — hang causes stretching over time<br>
+              De-pill with a cashmere comb, if required.</p>
             </div>
           </div>
           <div class="accordion-item">
@@ -319,10 +322,10 @@
 <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-label="Shopping cart">
   <div class="cart-drawer-header">
     <h3>Your Cart</h3>
-    <button class="icon-btn" id="cart-close">✕</button>
+    <button class="icon-btn" id="cart-close"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
   </div>
   <div class="shipping-progress" id="shipping-progress">
-    <p>Add <strong>CHF 300</strong> more for free delivery 🎉</p>
+    <p>Add <strong>CHF 300</strong> more for free delivery</p>
     <div class="progress-bar"><div class="progress-bar-fill" style="width:0%"></div></div>
   </div>
   <div id="cart-items-list" class="cart-items"></div>
@@ -340,7 +343,7 @@
     </div>
     <button class="btn btn-primary btn--full btn--lg" id="cart-checkout-btn">CHECKOUT →</button>
     <button class="btn btn-secondary btn--full" style="margin-top:8px" onclick="closeCart()">Continue Shopping</button>
-    <p class="cart-trust">↩️ 14-day return &nbsp;·&nbsp; 🔒 Secure checkout</p>
+    <p class="cart-trust"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 14 4 9 9 4"/><path d="M20 20v-7a4 4 0 00-4-4H4"/></svg> 14-day return &nbsp;·&nbsp; <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg> Secure checkout</p>
   </div>
 </aside>
 
@@ -349,7 +352,7 @@
   <div class="modal">
     <div class="modal-header">
       <h3>Size Guide — Crewneck</h3>
-      <button class="icon-btn" id="size-guide-close">✕</button>
+      <button class="icon-btn" id="size-guide-close"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
     </div>
     <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:16px;">
       Measurements taken flat (cm). For a comfortable fit, match to your chest measurement.

@@ -6,6 +6,15 @@
 /* --- Reset & Variables --- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* --- Inline SVG Icons --- */
+.icon, .care-icon {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+.care-icon { margin-right: 6px; }
+.icon { margin-right: 4px; }
+
 :root {
   --bg:        #FAFAF8;
   --bg-beige:  #F5F2EC;
@@ -105,6 +114,13 @@ h4 { font-size: 1rem; }
   font-size: 1.25rem;
   letter-spacing: 0.08em;
   color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-logo img {
+  height: 40px;
+  width: auto;
 }
 
 .header-actions {
@@ -1368,6 +1384,12 @@ h4 { font-size: 1rem; }
   font-family: var(--font-serif);
   font-size: 1.1rem;
   letter-spacing: 0.06em;
+  display: flex;
+  align-items: center;
+}
+.checkout-header .logo img {
+  height: 36px;
+  width: auto;
 }
 .checkout-header .secure-label {
   display: flex;

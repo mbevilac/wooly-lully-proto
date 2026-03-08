@@ -3,6 +3,20 @@
    Shared across all prototype pages
    ============================================================ */
 
+/* --- Inline SVG Icons (zero HTTP, inherits currentColor) --- */
+const ICONS = {
+  truck: '<svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>',
+  returnArrow: '<svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 14 4 9 9 4"/><path d="M20 20v-7a4 4 0 00-4-4H4"/></svg>',
+  shield: '<svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>',
+  checkCircle: '<svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg>',
+  close: '<svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>',
+  chevronRight: '<svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>',
+  chevronDown: '<svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>',
+  handWash: '<svg class="care-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14c0 4 3.5 6 8 6s8-2 8-6"/><line x1="2" y1="14" x2="22" y2="14"/><path d="M7 11c1-1.5 2.5-1.5 3.5 0s2.5 1.5 3.5 0 2.5-1.5 3.5 0"/><path d="M10 10V5.5a1.5 1.5 0 013 0V9"/><path d="M13 8V4.5a1.5 1.5 0 013 0V9"/><path d="M10 7V3.5a1.5 1.5 0 00-3 0V10"/></svg>',
+  noTumble: '<svg class="care-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="12" r="5"/><line x1="4" y1="4" x2="20" y2="20"/></svg>',
+  detergent: '<svg class="care-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 8v12a2 2 0 002 2h4a2 2 0 002-2V8"/><path d="M10 8V5a1 1 0 011-1h2a1 1 0 011 1v3"/><rect x="9" y="2" width="6" height="2" rx="0.5"/><line x1="10" y1="14" x2="14" y2="14"/><line x1="10" y1="16.5" x2="14" y2="16.5"/></svg>',
+};
+
 /* --- Product Data (for PDP switching) --- */
 const PRODUCTS = {
   'navy-crewneck': {
@@ -27,7 +41,7 @@ const PRODUCTS = {
     eduText: '<strong>Why it matters:</strong> &lt;19 micron fibre is the finest grade of cashmere — softer against skin and more durable over years. 280 gsm means substantial warmth without bulk. 2-ply construction holds its shape wash after wash.',
     crossLink: null,
     accordionDesc: 'The Navy Cashmere Crewneck is a wardrobe essential built to last. Knitted from 100% 2-ply Grade A cashmere, it delivers an extraordinary softness that only improves with wear. The classic crewneck silhouette suits everything from smart-casual to relaxed weekend dressing.<br><br>The navy colourway is a Swiss wardrobe staple — pairs effortlessly with grey trousers, cream chinos, or dark denim. Finished with clean ribbed cuffs and hem.',
-    careInstructions: '🌀 Hand wash<br>🚫 Do not tumble dry — lay flat to dry away from direct heat<br>🧴 Use a gentle cashmere or wool detergent<br>👕 Store folded, not hung — hang causes stretching over time<br>🪷 De-pill with a cashmere comb after the first few wears — normal with 2-ply',
+    careInstructions: `${ICONS.handWash} Hand wash cold<br>${ICONS.noTumble} Do not tumble dry — lay flat to dry away from direct heat<br>${ICONS.detergent} Use a gentle cashmere or wool detergent<br>Store folded, not hung — hang causes stretching over time<br>De-pill with a cashmere comb after the first few wears — normal with 2-ply`,
   },
   'oatmeal-merino': {
     id: 'WL-CN09-OAT', name: 'Oatmeal Merino Crewneck', price: 195,
@@ -48,7 +62,7 @@ const PRODUCTS = {
     eduText: '<strong>Why merino-cashmere?</strong> The 80/20 blend gives you cashmere\'s signature softness with merino\'s natural temperature regulation and easy-care properties. Machine washable on wool cycle. The ideal everyday sweater — soft enough for bare skin, durable enough for daily wear.',
     crossLink: null,
     accordionDesc: 'The Oatmeal Merino Crewneck is the entry point to the Wooly Lully wardrobe — and not a compromise. The 80/20 merino-cashmere blend is deliberately chosen: cashmere adds that unmistakable softness against skin, while merino provides natural temperature regulation and easy-care durability.<br><br>Machine washable on a wool cycle. The ideal everyday sweater for those who wear their knitwear hard.',
-    careInstructions: '🌀 Hand wash<br>🚫 Do not tumble dry — lay flat to dry<br>🧴 Merino-safe detergent<br>👕 Store folded, not hung',
+    careInstructions: `${ICONS.handWash} Hand wash cold<br>${ICONS.noTumble} Do not tumble dry — lay flat to dry<br>${ICONS.detergent} Merino-safe detergent<br>Store folded, not hung`,
   },
   'cream-scarf': {
     id: 'WL-SC11-CRM', name: 'Cream Cashmere Scarf', price: 180,
@@ -69,7 +83,7 @@ const PRODUCTS = {
     eduText: '<strong>Why it matters:</strong> 100% cashmere at 180 gsm gives the scarf its characteristic drape — lightweight enough for indoor wear, warm enough for Swiss winters. The generous 200 cm length allows effortless wrapping or doubling.',
     crossLink: null,
     accordionDesc: 'The Cream Cashmere Scarf is pure luxury made wearable. At 200 cm × 70 cm, it\'s designed to wrap, drape, or double — adapting to how you need warmth. Made from Grade A cashmere, finished with clean hand-rolled edges.',
-    careInstructions: '🌀 Hand wash<br>🚫 Do not tumble dry — lay flat<br>🧴 Cashmere or wool detergent<br>👕 Store folded',
+    careInstructions: `${ICONS.handWash} Hand wash cold<br>${ICONS.noTumble} Do not tumble dry — lay flat<br>${ICONS.detergent} Cashmere or wool detergent<br>Store folded`,
   },
   'black-merino': {
     id: 'WL-VN10-BLK', name: 'Black Merino V-Neck', price: 195,
@@ -90,7 +104,7 @@ const PRODUCTS = {
     eduText: '<strong>Why merino-cashmere?</strong> The 80/20 blend gives you cashmere\'s signature softness with merino\'s natural temperature regulation and easy-care properties. Machine washable on wool cycle. The ideal everyday sweater — soft enough for bare skin, durable enough for daily wear.',
     crossLink: null,
     accordionDesc: 'The Black Merino V-Neck is a wardrobe workhorse in premium form. The V-neck silhouette is versatile — pairs over a shirt for smart-casual, or alone for weekend ease. Same 80/20 merino-cashmere blend as the Oatmeal Crewneck: machine washable, temperature-regulating, built for daily wear.',
-    careInstructions: '🌀 Hand wash<br>🚫 Do not tumble dry — lay flat to dry<br>🧴 Merino-safe detergent<br>👕 Store folded, not hung',
+    careInstructions: `${ICONS.handWash} Hand wash cold<br>${ICONS.noTumble} Do not tumble dry — lay flat to dry<br>${ICONS.detergent} Merino-safe detergent<br>Store folded, not hung`,
   },
 };
 
@@ -279,13 +293,13 @@ function renderCartDrawer() {
     if (fillEl) fillEl.style.width = pct + '%';
     if (msgEl) {
       if (remaining > 0) {
-        msgEl.innerHTML = `Add <strong>CHF ${remaining.toFixed(0)}</strong> more for free delivery 🎉`;
+        msgEl.innerHTML = `Add <strong>CHF ${remaining.toFixed(0)}</strong> more for free delivery`;
         // Show accessory suggestion when close to threshold
         if (remaining <= 200 && remaining > 0) {
           msgEl.innerHTML += `<br><a href="shop.html" onclick="closeCart()" style="font-size:0.78rem; color:var(--gold); text-decoration:underline;">Add a Scarf (CHF 180) or Beanie (CHF 185)?</a>`;
         }
       } else {
-        msgEl.innerHTML = `<strong>Free delivery unlocked!</strong> 🎉`;
+        msgEl.innerHTML = `<strong>Free delivery unlocked</strong>`;
       }
     }
   }
@@ -406,7 +420,7 @@ function initFilterAccordions() {
       const arrow = btn.querySelector('.arrow');
       const isOpen = content?.classList.contains('open');
       content?.classList.toggle('open', !isOpen);
-      if (arrow) arrow.textContent = isOpen ? '›' : '‹';
+      if (arrow) arrow.innerHTML = isOpen ? '<svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>' : '<svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>';
     });
   });
 }
@@ -570,7 +584,7 @@ function initOrderSummaryToggle() {
   btn.addEventListener('click', () => {
     const isOpen = col.classList.toggle('open');
     const arrow = btn.querySelector('.toggle-arrow');
-    if (arrow) arrow.textContent = isOpen ? '▲' : '▼';
+    if (arrow) arrow.innerHTML = isOpen ? ICONS.chevronDown.replace('points="6 9 12 15 18 9"', 'points="6 15 12 9 18 15"') : ICONS.chevronDown;
   });
 }
 
